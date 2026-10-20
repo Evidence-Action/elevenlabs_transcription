@@ -42,7 +42,7 @@ There are only two files you need to care about, and you only ever **edit one of
 | `Code/master_run.py` | **The control panel.** Holds every setting (which folder, which language, speaker labels on/off...), loads your API key, and starts the job. | **Yes** — edit Section 1 before a run. |
 | `Code/transcribe.py` | **The engine.** Finds the audio files, calls the API, writes the Word documents, counts successes and failures. Takes all its settings from `master_run.py`. | **No** — never needs editing. |
 
-The flow is deliberately boring:
+The flow:
 
 ```
 Input/  ─────▶  master_run.py  ─────▶  transcribe.py  ─────▶  ElevenLabs API
@@ -68,7 +68,7 @@ mle-audio-transcription/
 └── requirements.txt             ← the three Python packages needed
 ```
 
-`Input/` and `Output/` are deliberately empty on GitHub. Recordings and transcripts
+`Input/` and `Output/` are empty on GitHub. Recordings and transcripts
 are participant data and must never be committed — `.gitignore` blocks them, along
 with the `.env` folder that holds the API key.
 
@@ -99,8 +99,6 @@ Check it worked — open Command Prompt (Windows) or Terminal (Mac) and run:
 python --version
 pip --version
 ```
-
-(On a Mac you may need `python3` and `pip3` everywhere this README says `python` and `pip`.)
 
 ### 2c. Install the three packages
 
@@ -221,9 +219,6 @@ The following files failed:
 =============================================
 ```
 
-The summary is the bit that matters: anything under "The following files failed"
-needs another run.
-
 ---
 
 ## 6. Troubleshooting
@@ -295,4 +290,4 @@ python Code/run_my_project.py "interview_04" "interview_07"
 
 Recordings, transcripts and the API key stay on your machine. The `.gitignore`
 blocks audio, video, `.docx` files and the `.env` folder, so a routine
-`git add .` can't publish participant data or your key by accident. Keep it that way.
+`git add .` can't publish participant data or your key by accident. 
