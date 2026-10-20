@@ -1,0 +1,4 @@
+# Install everything with:  pip install -r requirements.txt
+requests>=2.31      # sends the audio file to the ElevenLabs API
+python-dotenv>=1.0  # reads the API key out of the .env file
+python-docx>=1.1    # writes each transcript as a Word (.docx) file
